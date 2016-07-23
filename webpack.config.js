@@ -55,7 +55,8 @@ module.exports = {
                 warnings: false
             },
             mangle: true
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
         root: path.resolve('src'),
