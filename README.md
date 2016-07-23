@@ -1,5 +1,4 @@
-# spotify-react-redux
-A simple spotify client built using react and redux. WIP
+# es6-react-webpack-boilerplate
 
 # Run the app in the browser
 
