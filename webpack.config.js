@@ -49,7 +49,13 @@ module.exports = {
     },
     plugins: [
         // new webpack.optimize.UglifyJsPlugin({minimize: true}),
-        new ExtractTextPlugin("styles.css")
+        new ExtractTextPlugin("styles.css"),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            mangle: true
+        })
     ],
     resolve: {
         root: path.resolve('src'),
