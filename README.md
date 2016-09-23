@@ -11,3 +11,9 @@ $ npm run work
 ```
 $ npm run build
 ```
+
+
+npm run work --env=qa
+npm run work --env=local
+
+npm run build --env=qa

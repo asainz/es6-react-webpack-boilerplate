@@ -48,26 +48,30 @@ module.exports = {
         inline: true
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'local')
+        }),
         // new webpack.optimize.UglifyJsPlugin({minimize: true}),
         new ExtractTextPlugin("styles.css"),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            mangle: true
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     },
+        //     mangle: true
+        // }),
         new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
-        root: path.resolve('src'),
+        // root: path.resolve('src'),
         modulesDirectories: [
             'node_modules'
         ],
         extensions: ['', '.json', '.js', '.scss'],
         alias: {
-            actions: 'actions',
-            components: 'components',
-            views: 'views'
+            'env-config': path.join(__dirname, 'environment-config', process.env.NODE_ENV),
+            actions: 'src/actions',
+            components: 'src/components',
+            views: 'src/views'
         }
     }
 };

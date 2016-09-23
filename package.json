@@ -40,7 +40,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "work": "node_modules/.bin/webpack-dev-server --colors",
+    "work": "NODE_ENV=$npm_config_env && echo $NODE_ENV && node_modules/.bin/webpack-dev-server --colors",
     "build": "node_modules/.bin/webpack"
   },
   "repository": {
@@ -52,7 +52,8 @@
     "webpack",
     "babel",
     "javascript",
-    "es6"
+    "es6",
+    "react"
   ],
   "author": "Andrés Sainz de Aja",
   "license": "MIT",
